@@ -1,0 +1,560 @@
+/* ==========================================================================
+   CINEMATIC INTRO OVERLAY STYLES
+   Midnight Studio aesthetic with deep navy background, electric blue & warm amber rim lights
+   ========================================================================== */
+
+.cinematic-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #05070D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.cinematic-intro-overlay.intro-exiting {
+  opacity: 0;
+  transform: translateY(-24px);
+  pointer-events: none;
+}
+
+/* Background Atmosphere & Ambient Lighting */
+.intro-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.intro-glow-blue {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 195, 255, 0.14) 0%, rgba(5, 7, 13, 0) 70%);
+  filter: blur(40px);
+  animation: pulseGlowBlue 4s ease-in-out infinite alternate;
+}
+
+.intro-glow-amber {
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 170, 50, 0.12) 0%, rgba(5, 7, 13, 0) 70%);
+  filter: blur(40px);
+  animation: pulseGlowAmber 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlowBlue {
+  from { opacity: 0.6; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes pulseGlowAmber {
+  from { opacity: 0.6; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(0.92); }
+}
+
+/* Subtle Technical Grid Background */
+.intro-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.7;
+}
+
+/* Subtle Floating Code Symbols */
+.intro-floating-symbol {
+  position: absolute;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 600;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  animation: floatGlyph 3s ease-out forwards;
+}
+
+.intro-symbol-1 {
+  top: 18%;
+  left: 12%;
+  font-size: 1.5rem;
+  color: rgba(0, 195, 255, 0.4);
+  text-shadow: 0 0 16px rgba(0, 195, 255, 0.6);
+  animation-delay: 200ms;
+}
+
+.intro-symbol-2 {
+  bottom: 25%;
+  left: 10%;
+  font-size: 1.6rem;
+  color: rgba(0, 195, 255, 0.3);
+  text-shadow: 0 0 16px rgba(0, 195, 255, 0.5);
+  animation-delay: 400ms;
+}
+
+.intro-symbol-3 {
+  top: 22%;
+  right: 14%;
+  font-size: 1.5rem;
+  color: rgba(255, 170, 50, 0.4);
+  text-shadow: 0 0 16px rgba(255, 170, 50, 0.6);
+  animation-delay: 300ms;
+}
+
+.intro-symbol-4 {
+  bottom: 28%;
+  right: 12%;
+  font-size: 1.25rem;
+  color: rgba(255, 170, 50, 0.35);
+  text-shadow: 0 0 16px rgba(255, 170, 50, 0.5);
+  animation-delay: 500ms;
+}
+
+@keyframes floatGlyph {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.9);
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(-8px) scale(1);
+  }
+}
+
+/* Orbital Vector Rings Background */
+.intro-orbit-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.intro-orbit-ring {
+  stroke-dasharray: 6 10;
+  animation: introRotateRing 60s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes introRotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Skip Intro Button */
+.intro-skip-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(16, 20, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #D1D5DB;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 180ms ease-out;
+}
+
+.intro-skip-btn:hover {
+  color: #FFFFFF;
+  background: rgba(25, 32, 48, 0.9);
+  border-color: rgba(0, 195, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.intro-skip-btn:focus-visible {
+  outline: 2px solid #00F0FF;
+  outline-offset: 3px;
+}
+
+/* Main Content Grid */
+.intro-content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+/* Portrait Visual Frame */
+.intro-portrait-column {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-portrait-frame {
+  position: relative;
+  width: 340px;
+  height: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #080B14;
+  /* Dual subtle rim light box-shadow matching portrait lighting */
+  box-shadow: 
+    -12px 0 35px rgba(0, 195, 255, 0.22),
+    12px 0 35px rgba(255, 170, 50, 0.22),
+    0 15px 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(16px) scale(0.96);
+  opacity: 0;
+  animation: introPortraitEnter 1000ms cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+}
+
+@keyframes introPortraitEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Portrait Image: Head down to just above knees, face & upper body clearly visible */
+.intro-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.36);
+  transform-origin: center 16%;
+  display: block;
+  /* Smooth bottom vignette fade so knees/thighs dissolve softly */
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 98%);
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 98%);
+}
+
+/* Dual Rim Light Accents on Frame */
+.intro-portrait-rim-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #00F0FF 40%, #0088FF 80%, transparent);
+  opacity: 0.85;
+}
+
+.intro-portrait-rim-amber {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #FFAA33 40%, #FF7700 80%, transparent);
+  opacity: 0.85;
+}
+
+/* Text & Identity Column */
+.intro-text-column {
+  flex: 1;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00F0FF;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: introFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 400ms forwards;
+}
+
+.intro-status-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00F0FF;
+  box-shadow: 0 0 8px #00F0FF;
+}
+
+.intro-greeting {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: introFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 550ms forwards;
+}
+
+/* Staggered Name Reveal */
+.intro-name-title {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: introFadeUp 750ms cubic-bezier(0.16, 1, 0.3, 1) 700ms forwards;
+}
+
+.intro-name-highlight {
+  background: linear-gradient(135deg, #FFFFFF 30%, #00F0FF 80%, #FFAA33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Tagline */
+.intro-tagline {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introFadeUp 750ms cubic-bezier(0.16, 1, 0.3, 1) 850ms forwards;
+}
+
+/* Capability Pills */
+.intro-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introFadeUp 750ms cubic-bezier(0.16, 1, 0.3, 1) 1000ms forwards;
+}
+
+.intro-pill {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.intro-pill-cyan {
+  color: #00F0FF;
+  background: rgba(0, 240, 255, 0.06);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+
+.intro-pill-amber {
+  color: #FFAA33;
+  background: rgba(255, 170, 50, 0.06);
+  border-color: rgba(255, 170, 50, 0.2);
+}
+
+/* Cinematic Progress Line */
+.intro-progress-bar-wrap {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  opacity: 0;
+  animation: introFadeIn 400ms ease-out 1100ms forwards;
+}
+
+.intro-progress-line {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00F0FF 0%, #FFAA33 100%);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+  border-radius: 9999px;
+  animation: fillProgress 1200ms cubic-bezier(0.22, 1, 0.36, 1) 1150ms forwards;
+}
+
+@keyframes fillProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes introFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .intro-content-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 60px 24px 24px 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .intro-portrait-frame {
+    width: 210px;
+    height: 270px;
+    border-radius: 16px;
+    box-shadow: 
+      -8px 0 25px rgba(0, 195, 255, 0.2),
+      8px 0 25px rgba(255, 170, 50, 0.2),
+      0 10px 30px rgba(0, 0, 0, 0.8);
+  }
+
+  .intro-portrait-img {
+    object-position: center 12%;
+  }
+
+  .intro-text-column {
+    align-items: center;
+  }
+
+  .intro-name-title {
+    font-size: 2.1rem;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .intro-tagline {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    max-width: 380px;
+  }
+
+  .intro-pills-row {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .intro-floating-symbol {
+    display: none; /* keep mobile clean and uncluttered */
+  }
+
+  .intro-skip-btn {
+    top: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 901px) {
+  .intro-portrait-frame {
+    width: 270px;
+    height: 370px;
+  }
+  .intro-name-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ==========================================================================
+   COORDINATED HERO REVEAL
+   Reveals the existing hero section underneath using a gentle fade and subtle upward float
+   ========================================================================== */
+.portfolio-behind-intro #hero {
+  opacity: 0.92;
+  transform: translateY(14px);
+}
+
+.portfolio-revealing #hero {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1), transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* ==========================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-intro-overlay {
+    transition-duration: 250ms !important;
+  }
+  .intro-portrait-frame,
+  .intro-eyebrow-badge,
+  .intro-greeting,
+  .intro-name-title,
+  .intro-tagline,
+  .intro-pills-row,
+  .intro-progress-bar-wrap,
+  .intro-progress-line,
+  .intro-floating-symbol,
+  .intro-glow-blue,
+  .intro-glow-amber,
+  .intro-orbit-ring {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .portfolio-behind-intro #hero,
+  .portfolio-revealing #hero {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
