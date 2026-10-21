@@ -1,0 +1,101 @@
+================================================================================
+ROHAN PATIL — RESUME / CURRICULUM VITAE
+================================================================================
+Computer Engineering Student | Full-Stack Developer | AI Enthusiast
+Veermata Jijabai Technological Institute (VJTI), Mumbai
+B.Tech in Computer Engineering with Minor in Cybersecurity (2024 – 2028)
+Location: Mumbai, Maharashtra, India
+Email: itzrohan7744@gmail.com
+Phone: +91 7744804203
+GitHub: https://github.com/Rohan
+LinkedIn: https://linkedin.com/in/rohan-patil-placeholder (Editable)
+
+--------------------------------------------------------------------------------
+1. ACADEMIC PROFILE & ENTRANCE EXAMINATIONS
+--------------------------------------------------------------------------------
+Veermata Jijabai Technological Institute (VJTI), Mumbai (2024 – 2028)
+Degree: B.Tech in Computer Engineering with Minor in Cybersecurity
+Status: Currently Pursuing (Expected Graduation: 2028)
+- MHT-CET Score: 99.81 Percentile (State Rank 437)
+- JEE-Mains Score: 92.82 Percentile
+
+Shraddha College (2024)
+- Higher Secondary Certificate (HSC) / Pre-Engineering Foundation
+
+Relevant University Coursework:
+- Data Structures & Algorithms
+- Database Management Systems (SQL & NoSQL)
+- Operating Systems & System Programming
+- Theory of Computation
+- Algorithm Analysis & Optimization
+- Artificial Intelligence Foundations
+- Modern Cryptography (Cybersecurity Minor)
+
+--------------------------------------------------------------------------------
+2. TECHNICAL SKILLS & TOOLING
+--------------------------------------------------------------------------------
+Programming Languages:
+- C++ (Data structures, algorithms & high-performance foundations)
+- Python (Scripting, automation & AI workflows)
+- JavaScript (ES6+ asynchronous modern JavaScript)
+- HTML5 & CSS3 (Semantic markup, accessible design & responsive layouts)
+
+Backend Development & Databases:
+- Node.js & Express.js (REST API architecture, route handlers, middleware)
+- MongoDB (Document modeling, Mongoose schemas, compound indexing)
+- MySQL (Relational schema design, SQL querying)
+
+Developer Tools & Security:
+- Git & GitHub (Branch management, collaboration & version control)
+- VS Code (Workspace setup, debugging)
+- Postman (API endpoint testing & automated request suites)
+- JWT (JSON Web Tokens, session payloads, bearer auth middleware)
+
+Academic Minor & Specialization:
+- Cybersecurity Minor at VJTI (Modern Cryptography, ciphers, hashing, digital signatures)
+- Practical Gemini AI Integration (Prompt engineering, caption synthesis)
+- Local Diffusion Pipelines (ComfyUI node-based workflows, Stable Diffusion)
+
+--------------------------------------------------------------------------------
+3. FEATURED ENGINEERING PROJECTS
+--------------------------------------------------------------------------------
+CONTENT-FORGE — Full-Stack AI Content Creation & Scheduling Pipeline
+Role: Full-Stack Developer
+Tech Stack: JavaScript, Node.js, Express.js, MongoDB, JWT, Gemini AI, YouTube API, ComfyUI, Stable Diffusion
+- Integrated Google Gemini AI for automated structured prompt generation and caption synthesis.
+- Interfaced with local ComfyUI and Stable Diffusion instances for asset generation without recurring third-party API fees.
+- Sourced trending topics and media references using YouTube Data API.
+- Engineered Express.js REST backend with JWT authentication, route guards, and MongoDB queue collections.
+- Status: Code available upon request.
+
+EDUKEEDA — Student Opportunities Portal (Backend Architecture)
+Role: Backend Developer
+Tech Stack: Node.js, Express.js, MongoDB, JWT Authentication, REST APIs, JavaScript
+- Architected centralized RESTful API for hackathons, scholarships, internships, and cultural fests.
+- Implemented robust JWT verification middleware protecting administrative and submission routes.
+- Designed flexible MongoDB schemas handling multi-category opportunities, deadlines, and eligibility criteria.
+- Implemented structured error handling pipelines and sanitized JSON envelopes.
+- Status: Code available upon request.
+
+--------------------------------------------------------------------------------
+4. LEADERSHIP & CAMPUS INVOLVEMENT
+--------------------------------------------------------------------------------
+E-Cell, VJTI Mumbai — Department Head (2024 – 2025)
+- Spearheaded departmental operations at the Entrepreneurship Cell of VJTI.
+- Coordinated campus entrepreneurship initiatives, structured workshops, and managed cross-functional teams.
+- Organized speaker sessions with startup founders and facilitated student pitching events.
+
+Enthusia, VJTI Mumbai — Event Coordinator (College Term)
+- Coordinated tournament schedules, participant logistics, and venue setups for VJTI's annual festival.
+- Ensured smooth ground operations and dispute resolution under tight time constraints.
+
+--------------------------------------------------------------------------------
+5. BEYOND CODING & EXTRACURRICULARS
+--------------------------------------------------------------------------------
+Athletics:
+- Competitive Kabaddi: Represented college in tournament play, building tactical reflexes, rapid decision-making under pressure, and synchronized team defense.
+
+Hobbies:
+- Reading: Computing history, technology architecture, systems design, and science.
+- Sketching: Pencil perspective drawing, visual composition, and attention to detail.
+================================================================================
